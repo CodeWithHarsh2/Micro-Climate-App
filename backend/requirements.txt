@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+scikit-learn
+pandas
+numpy
+requests
+python-dotenv
+sqlalchemy
+alembic
+pydantic
+joblib
+aiohttp
+python-multipart
+pygeohash
+python-dateutil
