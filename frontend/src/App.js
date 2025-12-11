@@ -13,9 +13,6 @@ function App() {
         <MapComponent />
       </main>
 
-      <footer className="footer">
-        <small>Demo app - replace API key and extend model for production</small>
-      </footer>
     </div>
   );
 }
