@@ -12,7 +12,6 @@ function App() {
       <main className="main">
         <MapComponent />
       </main>
-
     </div>
   );
 }

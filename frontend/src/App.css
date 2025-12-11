@@ -1,67 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 html, body, #root {
   height: 100%;
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(160deg, #f3f6fc, #e0ebf8);
-  color: #1a1a1a;
+  font-family: "Inter", sans-serif;
+  background: #eef3fa;
 }
 
 /* GLOBAL ANIMATIONS */
-.fade-in { animation: fadeIn 0.8s ease-in-out forwards; }
-.slide-up { animation: slideUp 0.8s ease forwards; }
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease;
+}
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes slideUp {
-  0% { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* HEADER */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HEADER WITH GLASSMORPHISM */
 .header {
-  padding: 28px 20px;
+  padding: 28px;
   text-align: center;
   background: linear-gradient(135deg, rgba(76,143,255,0.9), rgba(31,110,235,0.9));
-  color: #fff;
-  backdrop-filter: blur(12px);
+  color: white;
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  border-radius: 0 0 18px 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
+
 .header h1 {
   margin: 0;
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
+
 .header p {
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 16px;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 /* MAIN LAYOUT */
 .main {
   display: flex;
-  height: calc(100% - 140px);
+  height: calc(100% - 130px);
   padding: 20px;
-  gap: 24px;
+  gap: 20px;
   box-sizing: border-box;
 }
 
-/* MAP CONTAINER */
+/* MAP CONTAINER – FLOATING CARD STYLE */
 .map-column {
   flex: 2;
   background: rgba(255,255,255,0.75);
-  border-radius: 20px;
+  border-radius: 22px;
   overflow: hidden;
-  display: flex;          /* make children stretch */
-  flex-direction: column; 
-  height: 100%;
   box-shadow: 0 12px 32px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06);
   animation: fadeIn 1s ease;
   position: relative;
@@ -69,113 +72,60 @@ html, body, #root {
 .leaflet-container {
   height: 100%;
   width: 100%;
-  border-radius: 100px;
-  flex:1;
+  border-radius: 22px;
+  
 }
 
-/* SIDEBAR INFO PANEL */
+/* SIDEBAR PANEL */
 .info-column {
   flex: 1;
-  padding: 20px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.85);
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.7);
   backdrop-filter: blur(12px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.08), inset 0 0 12px rgba(255,255,255,0.4);
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.08),
+    inset 0 0 20px rgba(255,255,255,0.4);
   overflow-y: auto;
 }
 
-/* RESULT CARD */
+/* CARDS */
 .result-card {
-  background: rgba(255,255,255,0.9);
-  padding: 22px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  margin-bottom: 22px;
-  transition: all 0.25s ease;
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow:
+    0 3px 10px rgba(0,0,0,0.08),
+    0 1px 2px rgba(0,0,0,0.04);
+  margin-bottom: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .result-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.12),
+    0 3px 6px rgba(0,0,0,0.06);
 }
+
 .result-card h2 {
   font-size: 22px;
   color: #1f6feb;
   margin-bottom: 10px;
 }
+
 .result-card h3 {
   font-size: 18px;
   color: #4c8fff;
-  margin-top: 16px;
-}
-
-/* FEEDBACK FORM */
-.feedback-card {
-  margin-top: 16px;
-  background: rgba(255,255,255,0.95);
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: all 0.25s ease;
-}
-.feedback-card input, 
-.feedback-card textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #cfd9e6;
-  outline: none;
-  font-size: 14px;
-  margin-bottom: 12px;
-  transition: 0.2s all ease-in-out;
-}
-.feedback-card input:focus,
-.feedback-card textarea:focus {
-  border-color: #4c8fff;
-  box-shadow: 0 0 8px rgba(76,143,255,0.3);
-}
-.feedback-card button {
-  background: linear-gradient(135deg, #4c8fff, #1f6feb);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s all ease;
-}
-.feedback-card button:hover {
-  background: linear-gradient(135deg, #1f6feb, #4c8fff);
-  box-shadow: 0 4px 16px rgba(76,143,255,0.45);
-}
-
-/* HEAT BAR */
-.heat-bar-container {
-  width: 100%;
-  height: 14px;
-  background: rgba(200,200,200,0.25);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-top: 8px;
-}
-.heat-bar-fill {
-  height: 100%;
-  width: 0;
-  border-radius: 12px;
-  background: linear-gradient(90deg, #ff6b6b, #ffb55a, #4c8fff);
-  animation: fillBar 1s ease forwards;
-}
-@keyframes fillBar {
-  from { width: 0; }
-  to { width: var(--heat-width); }
+  margin-top: 18px;
 }
 
 /* FOOTER */
 .footer {
-  padding: 14px 20px;
+  padding: 14px;
   text-align: center;
-  background: linear-gradient(90deg, #eef3fa, #dbe5f3);
+  background: #dbe5f3;
   font-size: 13px;
   color: #4a4a4a;
   border-top: 1px solid #cdd7e5;
-  box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
 }

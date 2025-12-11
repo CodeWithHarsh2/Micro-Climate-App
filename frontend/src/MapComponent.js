@@ -90,7 +90,7 @@ export default function MapComponent() {
       {/* INFO COLUMN */}
       <div className="info-column slide-up">
         {!selected ? (
-          // Show project description before any click
+          // BEFORE click: show project info + how to use
           <div className="result-card fade-in">
             <h2>About This Project</h2>
             <p>
@@ -113,11 +113,11 @@ export default function MapComponent() {
 
             <h3>How to Use</h3>
             <p>
-              Using the Micro-Climate Stress Detector is simple and intuitive. Click anywhere on the map to instantly view the predicted felt heat score for that location. The system will display local environmental conditions, including temperature, humidity, and wind, along with an animated heat bar showing the intensity of perceived heat. You can also submit your feedback about how hot it feels, which helps improve the accuracy of the model over time. The tool is designed to be interactive and easy to understand, allowing anyone to make informed decisions about outdoor activities, safe routes, and exposure to heat stress.
+              Click anywhere on the map to fetch the perceived heat for that location. You will see the environmental conditions and an animated heat score. Submit feedback to help improve the accuracy of the model. This tool is designed to be interactive and easy to understand, allowing anyone to make informed decisions about outdoor activities, safe routes, and heat exposure.
             </p>
           </div>
         ) : (
-          // Show location details after click
+          // AFTER click: show only location details + feedback
           <div className="result-card fade-in">
             <h2>Location Details</h2>
             <p><strong>Latitude:</strong> {selected.lat.toFixed(5)}</p>
@@ -136,6 +136,7 @@ export default function MapComponent() {
               ></div>
             </div>
 
+            {/* Premium Feedback Card */}
             <div className="feedback-card fade-in">
               <h3 style={{ marginBottom: "10px" }}>Submit Feedback</h3>
               <FeedbackForm
