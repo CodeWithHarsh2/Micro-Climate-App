@@ -2,7 +2,7 @@
 
 ## Project Overview  
 
-With cities getting hotter every year, ordinary temperature readings often fail to show how people actually feel. Feeling hot depends on more than just the thermometer it depends on humidity, wind, shade, surroundings, and even personal activity. The **Micro-Climate Stress Detector** is designed to map how hot people actually feel in real time across a city. By combining weather APIs, satellite humidity data, smartphone sensors, and crowdsourced feedback, this project produces a hyper-local heat stress map that tells you which areas are safe, which areas to avoid, and the best time to go outdoors.  
+With cities getting hotter every year, ordinary temperature readings often fail to show how people actually feel. Feeling hot depends on more than just the thermometer it depends on humidity, wind, shade, surroundings, and even personal activity. The **Micro-Climate Stress Detector** is designed to map how hot people actually feel in real time across a city. By combining weather APIs, satellite humidity data, smartphone sensors, and crowdsourced feedback, this project produces a hyper-local heat stress map that tells you which areas are safe, which areas to avoid & the best time to go outdoors.  
 
 ---
 
